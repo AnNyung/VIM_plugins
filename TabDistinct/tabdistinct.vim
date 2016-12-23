@@ -12,7 +12,7 @@
 
 " Avoid reloading {{{
 if exists('loaded_tab_distinct')
-	finish
+    finish
 endif
 
 let loaded_tab_distinct = 1
@@ -22,20 +22,31 @@ map _ :call TabDistinct ()<cr>
 let s:ToggleDistinct = 0
 
 function! TabDistinct ()
-	if !exists("g:syntax_on") || g:syntax_on == 0
-		echo "Tab distinct: nothigng because of Syntax off"
-		return 0
-	endif
+    if !exists("g:syntax_on") || g:syntax_on == 0
+        echo "Tab distinct: nothigng because of Syntax off"
+        return 0
+    endif
 
-	if s:ToggleDistinct == 0
-		syn match Tab "\t"
-		hi def Tab guifg=blue ctermbg=blue
-		let s:ToggleDistinct = 1
-		echo "Tab distinct:tab bgcolor turun on"
-	else
-		syn off
-		syn on
-		let s:ToggleDistinct = 0
-		echo "Tab distinct:tab bgcolor turun off"
-	endif
+    if s:ToggleDistinct == 0
+        syn match Tab "\t"
+        hi def Tab guifg=blue ctermbg=blue
+        let s:ToggleDistinct = 1
+        echo "Tab distinct:tab bgcolor turun on"
+    else
+        syn off
+        syn on
+        let s:ToggleDistinct = 0
+        echo "Tab distinct:tab bgcolor turun off"
+    endif
 endfunc
+
+"
+" Local variables:
+" tab-width: 4
+" c-basic-offset: 4
+" indent-tabs-mode nil
+" End:
+" vim: set filetype=vim et sw=4 ts=4 sts=4 fdm=marker:
+" vim600: et sw=4 ts=4 sts=4 fdm=marker
+" vim<600: et sw=4 ts=4 sts=4
+"
