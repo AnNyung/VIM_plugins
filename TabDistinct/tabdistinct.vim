@@ -1,6 +1,8 @@
 " Plugin for distict between TAB and SPACE character
 "
-" Maintainer: JoungKyun.Kim <http://annyung.oops.org>
+" Maintainer: JoungKyun.Kim <http://oops.org>
+" Projects:   https://github.com/AnNyung/VIM_plugins
+" Bug Report: https://github.com/AnNyung/VIM_plugins/issues
 " Revision:   r1 2016/12/23
 "
 " INSTALL
