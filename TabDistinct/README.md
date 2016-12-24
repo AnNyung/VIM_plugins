@@ -19,3 +19,6 @@ If you want to change the toggle key from the "\_" key to another key, find the 
 map _ :call TabDistinct ()<cr>
 ```
 
+## 4. Supported versions of VIM
+
+Only tested on VIM 7.
