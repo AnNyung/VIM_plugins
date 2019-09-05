@@ -1,9 +1,9 @@
 " Plugin for distict between TAB and SPACE character
 "
-" Maintainer: JoungKyun.Kim <http://oops.org>
+" Maintainer: JoungKyun.Kim <hostmaster@oops.org>
 " Projects:   https://github.com/AnNyung/VIM_plugins
 " Bug Report: https://github.com/AnNyung/VIM_plugins/issues
-" Revision:   r1 2016/12/23
+" Revision:   r2 2019/09/05
 "
 " INSTALL
 "  Put tabdistinct.vim in vim plugin directory($VIM/vimfiles/plugin) or
@@ -30,13 +30,12 @@ function! TabDistinct ()
     endif
 
     if s:ToggleDistinct == 0
-        syn match Tab "\t"
-        hi def Tab guifg=blue ctermbg=blue
+        hi SpecialKey ctermbg=blue guibg=blue ctermfg=blue guifg=blue
+        set list listchars=tab:··
         let s:ToggleDistinct = 1
         echo "Tab distinct:tab bgcolor turun on"
     else
-        syn off
-        syn on
+        set nolist
         let s:ToggleDistinct = 0
         echo "Tab distinct:tab bgcolor turun off"
     endif
@@ -48,7 +47,5 @@ endfunc
 " c-basic-offset: 4
 " indent-tabs-mode nil
 " End:
-" vim: set filetype=vim et sw=4 ts=4 sts=4 fdm=marker:
-" vim600: et sw=4 ts=4 sts=4 fdm=marker
-" vim<600: et sw=4 ts=4 sts=4
+" vim: filetype=vim si et sw=4 ts=4 sts=4 fdm=marker:
 "
